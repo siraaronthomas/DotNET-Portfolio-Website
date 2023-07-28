@@ -10,8 +10,7 @@
         <div class="portfolio-hero">
             @if (hero is not null)
             {
-                <img src="@(hero.Src)" style="height: 90%; width: 100%; object-fit: cover;" 
-                    alt="@(hero.Alt)" />
+                <img src="@(hero.Src)" style="height: 90%; width: 100%; object-fit: cover; animation: 1s ease-out 0s 1 slideInLeft;" alt="@(hero.Alt)" />
             }
         </div>
         <div class="container">
@@ -42,6 +41,6 @@
     protected override async Task OnInitializedAsync()
     {
         projects = await Http.GetFromJsonAsync<List<Project>>("sample-data/projects.json");
-        hero = await HeroImageService.GetHeroAsync(img => img.Name is "portfolio");
+        hero = await HeroImageService.GetHeroAsync(img => img.Name is "Aaron Davidge | Portfolio");
     }
 }

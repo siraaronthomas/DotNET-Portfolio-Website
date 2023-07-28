@@ -4,7 +4,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
 
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
@@ -234,4 +236,13 @@ img.social-icon {
 
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
     }
